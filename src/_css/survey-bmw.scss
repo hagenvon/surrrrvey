@@ -1,0 +1,1677 @@
+///* ----------------------------------------------------------------------------------*/
+///* Colors */
+//
+//@import 'brightness';
+//
+///* Corporate Colors  #165aa3 */
+//$primary: #1c69d4;  ; /*Suggestion: #256672 */
+//$secondary: rgb(118,183,41); /*rgb(118,183,41);*/
+//$white: rgb(255,255,255);
+//$lighter-gray: rgb(246,245,243);
+//$light-gray: rgba(0,0,0, 0.11);
+//$dark-gray: #666666;
+//$gray: rgb(99, 102, 106);
+//$black: #333;
+//$dark-primary: darken($primary, 15%);
+//$dark-secondary: darken($secondary, 15%);
+//$bgFooter: #8e8e8e;
+//
+///* Signal Colors */
+//$yellow: rgb(255,209,0);
+//$orange: rgb(255,135,31);
+//$red: rgb(200,45,32);
+//$dark-red: rgb(155,0,25);
+//$green: rgb(81,174,48);
+//$dark-green: rgb(0,93,77);
+//
+///* Text Colors */
+//$text-light: $white;
+//$text-dark: $black;
+//
+///* Color classes */
+//.text-primary {color: $primary}
+//.text-secondary {color: $secondary}
+//.text-orange {color:$orange }
+//.text-yellow {color: $yellow }
+//.text-green {color: $green}
+//.text-dark-green {color: $dark-green}
+//.text-red{color: $red}
+//.text-dark-red{color: $dark-red}
+//.text-primary {color:$primary}
+//.text-light-gray {color:$light-gray}
+//.text-gray {color:$gray}
+//.text-dark-gray {color:$dark-gray}
+//.text-white {color: white}
+//.text-black {color: $black}
+//
+//.bg-primary {background-color: $primary}
+//.bg-secondary {background-color: $secondary}
+//.bg-orange {background-color:$orange }
+//.bg-yellow {background-color: $yellow }
+//.bg-green {background-color: $green}
+//.bg-dark-green {background-color: $dark-green}
+//.bg-red{background-color: $red}
+//.bg-dark-red{background-color: $dark-red}
+//.bg-primary {background-color:$primary}
+//.bg-light-gray {background-color:$light-gray}
+//.bg-gray {background-color:$gray}
+//.bg-dark-gray {background-color:$dark-gray}
+//.bg-lighter-gray {background-color: $lighter-gray}
+//.bg-white {background-color: white}
+//
+///* ----------------------------------------------------------------------------------*/
+///* Variables*/
+//
+//$paddingDefault: 20px;
+//$pageContentWidth: 910px;
+//$borderRadiusDefault: 3px;
+//$hoverDefault: rgba(0,0,0, 0.16);
+//$submitBtnColor: $primary;
+//
+//$starRatingActiveColor: $yellow;
+//
+///* ----------------------------------------------------------------------------------*/
+///* Text Sizes */
+//
+//.page-content-wrapper,
+//.question-content-wrapper {
+//	h1 {
+//		font-size: 150%;
+//		line-height: inherit;
+//		font-weight: 500;
+//	}
+//	p {
+//		font-size: 120%;
+//  		font-weight: inherit;
+//	}
+//}
+//
+//.page-content-body p:last-child{
+//  margin-bottom: 0;
+//}
+//
+//.question-content-body textarea {
+//  width: 100%;
+//  font-size: 120%;
+//  color: inherit;
+//  font-weight: inherit;
+//}
+//
+//.page-content-body .text-link {
+//  color: inherit;
+//}
+//
+//.page-content-body .text-link:hover {
+//  color: inherit;
+//  text-decoration: underline;
+//}
+//
+///*-----------------------------*/
+///* Adjustments for Text Sizes */
+//
+//@media screen and (max-width: 991px) {
+//	.question-content-header h1{
+//		font-size: 120%;
+//	}
+//	.question-content-wrapper .btn {
+//		font-size: inherit;
+//	}
+//	.question-content-body textarea,
+//	.question-content-body input {
+//		font-size: inherit;
+//	}
+//	.page-content-footer .btn {
+//		font-size: inherit;
+//	}
+//}
+//
+//@media screen and (max-width: 767px) {
+//	.question-content-header h1,
+//	.question-content-body {
+//		font-size: inherit;
+//	}
+//}
+//
+//
+//.rating-label {
+//    font-size: 90%;
+//}
+//
+///* ----------------------------------------------------------------------------------*/
+///* Basic Layout */
+//
+///*-----------------------------*/
+///* Survey */
+//
+//html {
+//	overflow-y: scroll;
+//	overflow-x: hidden;
+//}
+//
+//body {
+//	background-color: white;
+//}
+//
+//.footer-container a {
+//    color: white;
+//    text-decoration: none;
+//    &:hover {
+//    	color: white;
+//    	text-decoration: underline;
+//    }
+//}
+//
+//.survey-container {
+//	position: absolute;
+//	top: 0;
+//	left: 0;
+//	right: 0;
+//	bottom:0;
+//	z-index: 100;
+///*   overflow-y: auto; */
+///*   overflow-x: hidden; */
+///*   background-color: white */
+//}
+//
+//.survey-content-wrapper {
+//	display: table;
+//	width: 100%;
+//	height: 100%;
+//}
+//.survey-content-header,
+//.survey-content-body,
+//.survey-content-footer {
+//	display: table-row;
+//}
+//.survey-content-header,
+//.survey-content-footer {
+//	height:1px;
+//}
+//.survey-content-body {
+//	height: auto;
+//}
+//
+///*--------------------------*/
+///* Progress bar */
+//
+//.survey-content-header .progress {
+//    max-width: 910px;
+//    margin: 0 auto;
+//    border-radius: 0;
+//}
+//
+///*-----------------------------*/
+///* Page */
+//
+//.page-container {
+//  display: table-cell;
+//  vertical-align: top;
+//}
+//
+//@media screen and (max-width: 767px) {
+//	.page-container {
+//	  	vertical-align: top;
+//	}
+//}
+//.dark-theme {
+//	.page-content-wrapper {
+//		background-color: rgba(black, 0.4);
+//	}
+//}
+//.light-theme {
+//	.page-content-wrapper {
+//		background-color: rgba(white, 0.6);
+//
+//	}
+//}
+//.page-content-wrapper {
+//  max-width: $pageContentWidth;
+//  margin: 0 auto;
+//  position: relative;
+//  transition: background-color 1s;
+//}
+//
+//.page-content-header {
+//  width: 100%;
+//  position: relative;
+//  padding: $paddingDefault;
+//  overflow: auto;
+//  min-height: 0;
+//}
+//
+//.page-content-header h1 + p {
+//	margin-top:-($paddingDefault/2);
+//}
+//
+//.page-container.default .page-content-header {
+//	padding-bottom: $paddingDefault/2;
+//
+//}
+//
+//.page-content-body {
+//  width: 100%;
+//  position: relative;
+//  padding: $paddingDefault;
+//  overflow: visible;
+//}
+//
+//.page-content-footer {
+//  position: relative;
+//  padding: $paddingDefault;
+//  width: 100%;
+//  overflow: auto;
+//}
+//
+//.page-content-header:empty,
+//.page-content-footer:empty {
+//	display:none;
+//}
+//
+///*-----------------------------*/
+///* Sections */
+//
+///*--------------*/
+///* Default */
+//
+//.section-container {
+//	margin-left: -($paddingDefault);
+//	margin-right: -($paddingDefault);
+//	padding-bottom: $paddingDefault;
+//	margin-bottom: $paddingDefault;
+//	border-bottom: 1px solid rgba(0,0,0, 0.1)
+//}
+//.section-container:last-child {
+//	padding-bottom: 0;
+//	margin-bottom: 0;
+//	border-bottom: none;
+//}
+//
+//.section-content-wrapper {
+//	padding-left: $paddingDefault;
+//	padding-right: $paddingDefault;
+//}
+//
+//.section-container.section-subSection {
+//	border: none;
+//	margin-left: 0;
+//	margin-right: 0;
+//	padding-bottom: 0;
+//}
+//.section-container.section-subSection > .section-content-wrapper {
+//	padding: 0;
+//}
+//
+//
+///*--------------*/
+///* AQ Section */
+//
+//
+//
+//.section-aq .question-container {
+//	margin: -20px -20px 20px;
+//}
+//
+//.section-aq .question-content-wrapper {
+//	padding: 20px;
+//}
+//
+//@media screen and (max-width: 991px) {
+//
+//}
+//
+//@media screen and (min-width: 768px) {
+//	.section-aq  {
+//		float:left;
+//		width: 50%;
+//		margin: 0;
+//		border: none;
+//		padding-bottom: 0;
+//
+//		.question-content-header {
+//			h1 {
+//				margin-bottom: 3px;
+//				margin-top: 0;
+//				font-size: 14px;
+//			}
+//		}
+//	}
+//}
+//
+///*-----------------------------*/
+///* Questions */
+//
+//.question-container {
+//	margin: -($paddingDefault);
+//	position: relative;
+//	transition: background-color 0.7s ease
+//}
+//.question-content-wrapper {
+//	padding:($paddingDefault*1.5) $paddingDefault;
+//	overflow: auto;
+//}
+//
+//.question-container.question-subQuestion {
+//	margin: 0;
+//}
+//
+//.question-container.question-subQuestion > .question-content-wrapper {
+//	padding:($paddingDefault*0.5) $paddingDefault;
+//}
+//
+///* ----------------------------------------------------------------------------------*/
+///* Choices */
+//
+///*-----------------------------*/
+///* Form Styles */
+//
+//.dark-theme {
+//  .form-transparent {
+//    background-color: rgba(black, 0.35);
+//    border: none;
+//    box-shadow: none;
+//    resize: none;
+//    color: inherit;
+//  }
+//  .form-transparent:hover {
+//    background-color: rgba(black, 0.4);
+//    border: none;
+//  }
+//  .form-transparent::-webkit-input-placeholder{
+//    color: $gray;
+//    box-shadow: none;
+//  }
+//  .form-transparent:-moz-placeholder{
+//    color: $gray;
+//    box-shadow: none;
+//  }
+//  .form-transparent::-moz-placeholder{
+//    color: $gray;
+//    box-shadow: none;
+//  }
+//  .form-transparent:-ms-input-placeholder {
+//    color: $gray;
+//    box-shadow: none;
+//  }
+//}
+//
+//.light-theme {
+//  .form-transparent {
+//    background-color: $light-gray;
+//    border: 1px solid transparent;
+//    box-shadow: none;
+//    resize: none;
+//    color: inherit;
+//    border-radius: $borderRadiusDefault;
+//  }
+//  .form-transparent:hover {
+//    background-color: $hoverDefault;
+//  }
+//  .form-transparent::-webkit-input-placeholder{
+//    color: $gray;
+//    box-shadow: none;
+//  }
+//  .form-transparent:-moz-placeholder{
+//    color: $gray;
+//    box-shadow: none;
+//  }
+//  .form-transparent::-moz-placeholder{
+//    color: $gray;
+//    box-shadow: none;
+//  }
+//  .form-transparent:-ms-input-placeholder {
+//    color: $gray;
+//    box-shadow: none;
+//  }
+//}
+//
+///*-----------------------------*/
+///* Rating */
+//
+//.btn-group-container {
+//	display: inline-block;
+//}
+//
+//.rating-label {
+//	margin-top: 5px;
+//}
+//
+///* barChoice  */
+//
+//.bar-choice-horizontal {
+//	.choice-item-wrapper {
+//		border-color: transparent;
+//		position: relative;
+//		float: left;
+//	}
+//}
+//
+//@media screen and (min-width: 768px) {
+//	.bar-choice-horizontal {
+//		.choice-item-wrapper {
+//			margin-left: 2px;
+//			margin-right: 2px;
+//
+//			.choice-item {
+//				padding: 10px 16px;
+//			    font-size: 18px;
+//			    line-height: 1.3333333;
+//			}
+//		}
+//	}
+//}
+//
+//@media screen and (max-width: 991px) {
+//	.bar-choice-horizontal {
+//		.choice-item-wrapper {
+//			.choice-item {
+//			    font-size: inherit;
+//			}
+//		}
+//	}
+//}
+//
+//
+//@media screen and (max-width: 767px) {
+//
+//	.bar-choice-default {
+//		.choice-item {
+//			display: block;
+//			width: 100%;
+//			text-align: left;
+//			margin-left: 0 !important;
+//			margin-right: 0 !important;
+//			border-top: none;
+//			margin-bottom:5px;
+//		}
+//		.choice-item:first-child {
+//			border-bottom-left-radius: 0;
+//			border-top-left-radius: 0;
+//		}
+//		.choice-item:last-child {
+//			border-bottom-right-radius: 0;
+//			border-top-right-radius: 0;
+//		}
+//	}
+//
+//	.bar-choice-horizontal {
+//		display: block;
+//		width: 100%;
+//		margin-bottom: 5px;
+//
+//		.rating-label {
+//			font-size: 80%;
+//		}
+//
+//		.btn-group {
+//			display: block;
+//			width: 100%;
+//			overflow: auto;
+//		}
+//		.choice-item-wrapper {
+//			padding-left: 1px;
+//			padding-right: 1px;
+//			&:first-child {
+//				padding-left: 0;
+//			}
+//			&:last-child {
+//				padding-right: 0;
+//			}
+//		}
+//		.choice-item {
+//			width: 100%;
+//			padding-left: 0;
+//			padding-right: 0;
+//		}
+//
+//		.choice-item-wrapper:first-child:nth-last-child(1) {
+//		    width: 100%;
+//		}
+//		.choice-item-wrapper:first-child:nth-last-child(2),
+//		.choice-item-wrapper:first-child:nth-last-child(2) ~ .choice-item-wrapper {
+//		    width: 50%;
+//		}
+//		.choice-item-wrapper:first-child:nth-last-child(3),
+//		.choice-item-wrapper:first-child:nth-last-child(3) ~ .choice-item-wrapper {
+//		    width: 33.3333%;
+//		}
+//		.choice-item-wrapper:first-child:nth-last-child(4),
+//		.choice-item-wrapper:first-child:nth-last-child(4) ~ .choice-item-wrapper {
+//		    width: 25%;
+//		}
+//		.choice-item-wrapper:first-child:nth-last-child(5),
+//		.choice-item-wrapper:first-child:nth-last-child(5) ~ .choice-item-wrapper {
+//		    width: 20%;
+//		}
+//		.choice-item-wrapper:first-child:nth-last-child(6),
+//		.choice-item-wrapper:first-child:nth-last-child(6) ~ .choice-item-wrapper {
+//		    width: 16.6666%;
+//		}
+//		.choice-item-wrapper:first-child:nth-last-child(7),
+//		.choice-item-wrapper:first-child:nth-last-child(7) ~ .choice-item-wrapper {
+//		    width: 14.2857%;
+//		}
+//		.choice-item-wrapper:first-child:nth-last-child(8),
+//		.choice-item-wrapper:first-child:nth-last-child(8) ~ .choice-item-wrapper {
+//		    width: 12.5%;
+//		}
+//		.choice-item-wrapper:first-child:nth-last-child(9),
+//		.choice-item-wrapper:first-child:nth-last-child(9) ~ .choice-item-wrapper{
+//		    width: 11.11%;
+//		}
+//		.choice-item-wrapper:first-child:nth-last-child(10),
+//		.choice-item-wrapper:first-child:nth-last-child(10) ~ .choice-item-wrapper {
+//		    width: 10%;
+//		}
+//		.choice-item-wrapper:first-child:nth-last-child(11),
+//		.choice-item-wrapper:first-child:nth-last-child(11) ~ .choice-item-wrapper {
+//		    width: 9.0909%;
+//		}
+//
+//	}
+//
+//
+//}
+//
+//
+//
+//
+///*-----------------------------*/
+///* Radio and Checkboxes */
+//
+//.answer-list-container input[type=checkbox],
+//.answer-list-container input[type=radio] {
+//	visibility: hidden;
+//	position: absolute;
+//}
+//
+//.answer-list-container label {
+//	padding: 8px 15px;
+//	display: block;
+//	cursor: pointer;
+//	margin-bottom: 0;
+//}
+//
+//.answer-list-container li {
+//	margin-bottom: 10px;
+//	&:last-child {
+//		margin-bottom: 0;
+//	}
+//}
+//
+//.answer-list-container ul {
+//	margin-bottom: 0;
+//}
+//
+//
+//.answer-list-container input:checked + label {
+//  	background-color: $primary;
+//  	color: white;
+//}
+//.checkbox label::before {
+//    border: none;
+//}
+//
+//.answer-list-container .additionalCommentInput input {
+//	visibility: visible;
+//	position: relative;
+//}
+//
+//.answer-list-container .additionalCommentInput {
+//	margin-bottom: 0;
+//	.additionalCommentInput-content {
+//		padding: $paddingDefault*0.5  $paddingDefault 0;
+//	}
+//}
+//
+//.answer-list-container .additionalCommentInput-content > input,
+//.answer-list-container .additionalCommentInput-content > textarea {
+//	margin-bottom: 0;
+//}
+//
+///* ----------------------------------------------------------------------------------*/
+///* widths for choices */
+//
+///*
+//	.answer-list-container li,
+//	.question-content-body input,
+//	.question-content-body textarea {
+//		max-width: 50em;
+//	}
+//*/
+//
+///* ----------------------------------------------------------------------------------*/
+///* Adjustments for responsive Layout */
+//
+//@media screen and (max-width: 767px) {
+//	.answer-list-container label {
+//	    margin-bottom: 5px;
+//	    &:last-child {
+//	    	margin-bottom: 0;
+//	    }
+//	}
+//}
+//
+///* paddings and margins */
+//@media screen and (max-width: 767px) {
+//	.question-content-wrapper,
+//	.page-content-footer  {
+//		padding: 10px;
+//	}
+//	.page-content-footer .btn:first-child {
+//		margin-bottom: 5px;
+//	}
+//}
+//
+//@media screen and (max-width: 767px) {
+//	.question-content-header h1 {
+//		margin-top: 8px;
+//	}
+//}
+//
+///* ----------------------------------------------------------------------------------*/
+///* Layout Areas */
+//
+///*-----------------------------*/
+///* Navigation */
+//
+//a.survey-nav {
+//	color: $light-gray;
+//	position: absolute;
+//	top: -20px;
+//	width: 60px;
+//	height: 60px;
+//	z-index: 9000;
+//	opacity: 0.7;
+//	text-align: center;
+//	cursor: pointer;
+//	font-size: 6em;
+//}
+//
+//a.survey-nav:hover,
+//a.survey-nav:focus,
+//a.survey-nav:visited {
+//  opacity: 1;
+//  color: $hoverDefault;
+//  outline: 0;
+//}
+//
+//a.survey-nav-next {
+//  right: -60px;
+//}
+//a.survey-nav-previous {
+//  left: -60px;
+//}
+//
+//.btn.survey-nav-previous,
+//.btn.survey-nav-next,
+//.btn.survey-nav-submit {
+//    border-radius: 6px;
+//}
+//
+//@media screen and (max-width: 767px) {
+//	.page-content-footer a.survey-nav-previous,
+//	.page-content-footer a.survey-nav-next,
+//	#submit-survey-btn {
+//		width: 100%;
+//	}
+//}
+//
+///*-----------------------------*/
+///* Start Page  */
+//
+//.brand-container {
+//  background-color: white;
+//  padding: 8px;
+//  margin-bottom: 15px;
+//  overflow: auto;
+//  display: inline-block;
+//}
+//
+//
+///*-----------------------------*/
+///* Login Page  */
+//
+//#loginForm input{
+//	max-width: 40em;
+//}
+//#loginForm #submit {
+//	margin-top: 15px;
+//}
+//
+///*-----------------------------*/
+///* Thank you notes  */
+//
+//.thank-you-note {
+//	padding-top: ($paddingDefault)*1.5;
+//	padding-bottom: ($paddingDefault)*1.5;
+//}
+//
+//
+///*-----------------------------*/
+///* Footer */
+//
+//.survey-content-footer {
+//	color: inherit;
+//	border-top: none;
+//	text-align: right;
+//
+//}
+//.survey-content-footer > div {
+//	padding: 0 $paddingDefault;
+//}
+//.survey-container.dark-theme .survey-content-footer {
+//	background-color:rgba(black, 0.4);
+//	color: white;
+//}
+//.survey-container.light-theme .survey-content-footer {
+//	background-color: rgba(white, 0.6);
+//	color: #333;
+//}
+//.footer-subline {
+//    text-align: right;
+//    padding: 6px 0;
+//}
+//
+//@media screen and (max-width: 767px) {
+//	.footer-subline {
+//	    text-align: left;
+//	}
+//}
+//
+///*-----------------------------*/
+///* Header */
+//
+//.survey-content-header {
+//	color: inherit;
+//	border: none;
+//}
+//
+//.survey-container.dark-theme .survey-content-header {
+//	background-color:rgba(black, 0.4);
+//	color: white;
+//}
+//.survey-container.light-theme .survey-content-header {
+//	background-color: rgba(white, 0.6);
+//	color: #333;
+//}
+//
+///* ----------------------------------------------------------------------------------*/
+///* Layout Details */
+//
+///*-----------------------------*/
+///* Buttons */
+//
+//.btn {
+//	border-radius: 0;
+//	padding: 8px 45px;
+//}
+//
+//.btn-transparent {
+//  background-color: $light-gray;
+//  border-color: inherit;
+//  color: inherit;
+//  border-radius: $borderRadiusDefault;
+//}
+//
+//.btn-transparent:focus {
+//	outline: none !important;
+//}
+//
+//.btn-transparent:hover,
+//.btn-group > .btn-transparent:hover {
+//	background-color: $hoverDefault;
+//}
+//
+//.dark-theme {
+//	.btn-transparent:hover,
+//	.btn-transparent:focus,
+//	.form-transparent,
+//	.form-transparent:hover {
+//	  background-color: white;
+//	  color: $black;
+//	}
+//}
+//
+//.light-theme {
+//	/* to be done (?) */
+//}
+//
+//.light-theme .btn.active {
+//  background-color: $primary;
+//  color: white;
+//}
+//
+//.btn-primary {
+//  color: contrasting-color($primary, $text-light, $text-dark);
+//  background-color: $primary;
+//  border-color: darken($primary, 5%);
+//}
+//.btn-primary:focus,
+//.btn-primary.focus {
+//  color: contrasting-color(darken($primary, 5%), $text-light, $text-dark);
+//  background-color: darken($primary, 5%);
+//  border-color: darken($primary, 10%);
+//}
+//.btn-primary:hover {
+//  color: contrasting-color(darken($primary, 5%), $text-light, $text-dark);
+//  background-color: darken($primary, 5%);
+//  border-color: darken($primary, 10%);
+//}
+//.btn-primary:active,
+//.btn-primary.active,
+//.open > .dropdown-toggle.btn-primary {
+//  color: contrasting-color(darken($primary, 5%), $text-light, $text-dark);
+//  background-color: darken($primary, 5%);
+//  border-color: darken($primary, 10%);
+//}
+//.btn-primary:active:hover,
+//.btn-primary.active:hover,
+//.open > .dropdown-toggle.btn-primary:hover,
+//.btn-primary:active:focus,
+//.btn-primary.active:focus,
+//.open > .dropdown-toggle.btn-primary:focus,
+//.btn-primary:active.focus,
+//.btn-primary.active.focus,
+//.open > .dropdown-toggle.btn-primary.focus {
+//  color: contrasting-color(darken($primary, 5%), $text-light, $text-dark);
+//  background-color: darken($primary, 5%);
+//  border-color: darken($primary, 10%);
+//}
+//
+//.btn-primary.disabled,
+//.btn-primary[disabled],
+//fieldset[disabled] .btn-primary,
+//.btn-primary.disabled:hover,
+//.btn-primary[disabled]:hover,
+//fieldset[disabled] .btn-primary:hover,
+//.btn-primary.disabled:focus,
+//.btn-primary[disabled]:focus,
+//fieldset[disabled] .btn-primary:focus,
+//.btn-primary.disabled.focus,
+//.btn-primary[disabled].focus,
+//fieldset[disabled] .btn-primary.focus,
+//.btn-primary.disabled:active,
+//.btn-primary[disabled]:active,
+//fieldset[disabled] .btn-primary:active,
+//.btn-primary.disabled.active,
+//.btn-primary[disabled].active,
+//fieldset[disabled] .btn-primary.active {
+//  background-color: $primary;
+//  border-color: darken($primary, 5%);
+//}
+//.btn-primary .badge {
+//  color: $primary;
+//  background-color: #ffffff;
+//}
+//
+//.btn-submit {
+//	background-color: $submitBtnColor;
+//	color: white;
+//}
+//
+///* Button Groups */
+//.btn-group > .btn {
+//	border: 1px solid transparent;
+//}
+//
+//.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+//    border-radius: $borderRadiusDefault;
+//}
+//
+//.btn-group .btn + .btn,
+//.btn-group .btn + .btn-group,
+//.btn-group .btn-group + .btn,
+//.btn-group .btn-group + .btn-group {
+//    margin-right: 2px;
+//	margin-left: 2px;
+//}
+//
+//.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+//    margin-right: 2px;
+//	margin-left: 0;
+//	border-radius: $borderRadiusDefault;
+//}
+//.btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child) {
+//    margin-right: 0;
+//	margin-left: 2px;
+//	border-radius: $borderRadiusDefault;
+//}
+//
+//
+///*-----------------------------*/
+///* Progress Bar */
+//
+//.page-container .progress {
+//  border-radius: 0;
+//}
+//.page-container .progress,
+//.page-container .progress-labeled {
+//  background-color: rgba(black, 0.15);
+//  height: 20px;
+//}
+//
+///*-----------------------------*/
+///* Language Selection */
+//
+//.language-selection-container {
+//	overflow: visible;
+//	position: relative;
+//	z-index: 900;
+//}
+//
+//#dropdown-language-selection {
+//	text-align: left;
+//}
+//
+//.list-horizontal {
+//	margin: 0;
+//}
+//.list-horizontal li{
+//	/* bootstrap overwrite */
+//	display:inline-block;
+//	float:left;
+//}
+//
+//.list-language-selection{
+//	/* margin: 0 -1px; */
+//}
+//.list-language-selection li {
+//	padding: 0 6px;
+//	margin: 0 1px;
+//}
+//.list-language-selection li.active,
+//.list-language-selection li:hover {
+//	background-color: $dark-gray;
+//}
+//.list-language-selection li a:focus {
+//	outline: none;
+//}
+//#dropdown-language-selection button {
+//	background-color: transparent;
+//	border: none;
+//	padding: 0 8px;
+//}
+//#dropdown-language-selection button:focus {
+//	background-color: white;
+//	color: $text-dark;
+//}
+//#dropdown-language-selection .dropdown-menu {
+//    background-color: white;
+//    border: 1px solid $light-gray;
+//    border-radius: 0;
+//    box-shadow: none;
+//    min-width: 40px;
+//    padding: 0;
+//}
+//#dropdown-language-selection .dropdown-menu > li > a {
+//    padding: 2px 24px 2px 8px;
+//}
+//#dropdown-language-selection .dropdown-menu > li > a:hover {
+//	color: $text-dark;
+//}
+//#dropdown-language-selection .dropdown-menu > li.active > a:hover {
+//	color: white;
+//}
+//
+//.dropdown-menu > .active > a,
+//.dropdown-menu > .active > a:hover,
+//.dropdown-menu > .active > a:focus {
+//    background-color: $primary;
+//}
+//
+//
+///*-----------------------------*/
+///* Animated Dots */
+//
+//.animated-dots span {
+//  font-size: 140%;	/* looks better with slightly bigger dots */
+//  animation-name: blink;
+//  animation-duration: 1.4s;
+//  animation-iteration-count: infinite;
+//  animation-fill-mode: both;
+//}
+//
+//.animated-dots span:nth-child(2) {
+//  animation-delay: .2s;
+//}
+//
+//.animated-dots span:nth-child(3) {
+//  animation-delay: .4s;
+//}
+//
+//@keyframes blink {
+//  0% {
+//    opacity: .2;
+//  }
+//  20% {
+//    opacity: 1;
+//  }
+//  100% {
+//    opacity: .2;
+//  }
+//}
+//
+///* ----------------------------------------------------------------------------------*/
+///* Mandatory */
+//
+//.question-container.mandatory.unanswered {
+//	background-color: rgba($red, 0.8);
+//}
+//
+//.unanswered {
+//	 .form-transparent::-webkit-input-placeholder{
+//	   color: white;
+//	 }
+//	 .form-transparent:-moz-placeholder{
+//	   color: white;
+//	 }
+//	 .form-transparent::-moz-placeholder{
+//	   color: white;
+//	 }
+//	 .form-transparent:-ms-input-placeholder {
+//	   color: white;
+//	 }
+//}
+//
+//.mandatory .question-content-header > h1:after{
+//	content: "*";
+//	color: $red;
+//	font-size: 100%;
+//	margin-left: 0.25em;
+//}
+//
+//.mandatory-tooltip {
+//	position: absolute;
+//	background-color: rgba($red, 0.9);
+//	color: white;
+//	padding: 6px 12px;
+//	top: 0;
+//	right: 0
+//}
+//
+//
+//.mandatory-icon {
+//	font-size: 120%;
+//	margin-right: 4px;
+//}
+//
+//
+///*----------------*/
+///* Modals */
+//
+//
+//.modal .mandatory-tooltip {
+//	right: 5px;
+//}
+//
+//.modal-backdrop.in {
+//    opacity: .75;
+//}
+//
+//.modal-dpa .modal-title {
+//	text-align: center;
+//}
+//
+//.modal {
+//	.question-content-wrapper h1 {
+//		margin-top: 0;
+//	    font-size: 110%;
+//	    line-height: inherit;
+//	    font-weight: inherit;
+//	    @media (max-width: 991px){
+//			font-size: 100%;
+//		}
+//	    @media (max-width: 767px){
+//			font-size: 90%;
+//		}
+//	}
+//}
+//
+///*--------------------------------------------*/
+///* Header */
+///*--------------------------------------------*/
+//
+//.header-container {
+//	max-width: $pageContentWidth;
+//	margin: 0 auto;
+//	position: relative;
+//
+//  .top-right {
+//	position: absolute;
+//	top: 27px;
+//	right: 36px;
+//	@media (max-width: 767px){
+//	  top: 24px;
+//	  right: 32px;
+//	}
+//	@media (min-width: 992px){
+//	  top: 36px;
+//	  right: 48px;
+//	}
+//  }
+//
+//  .top-left {
+//	position: absolute;
+//	top: 27px;
+//	left: 36px;
+//	@media (max-width: 767px){
+//	  top: 24px;
+//	  left: 32px;
+//	}
+//	@media (min-width: 992px){
+//	  top: 36px;
+//	  left: 48px;
+//	}
+//  }
+//
+//  .bottom-left {
+//	position: absolute;
+//	bottom: 36px;
+//	left: 36px;
+//	@media (max-width: 767px){
+//	  bottom: 32px;
+//	  left: 32px;
+//	}
+//	@media (min-width: 992px){
+//	  bottom: 48px;
+//	  left: 48px;
+//	}
+//  }
+//
+//  .bottom-right {
+//	position: absolute;
+//	bottom: 36px;
+//	right: 36px;
+//	@media (max-width: 767px){
+//	  bottom: 32px;
+//	  right: 32px;
+//	}
+//	@media (min-width: 992px){
+//	  bottom: 48px;
+//	  right: 48px;
+//	}
+//  }
+//
+//}
+//
+//.header-image {
+//  width: 100%;
+//  height: 380px;
+//  background-position: center center;
+//  background-size: cover;
+//  background-repeat: no-repeat;
+//  background-attachment: scroll;
+//  background-color: #ddd;
+//  position: relative;
+//
+//  @media (max-width: 480px){
+//	background-position: 25% top;
+//	background-size: auto 260px;
+//	height: 240px;
+//  }
+//
+//  @media (min-width: 480px) and (max-width: 767px){
+//	background-position: 25% top;
+//	background-size: auto 320px;
+//	height: 280px;
+//  }
+//
+//  @media (min-width: 992px){
+//	height: 380px;
+//  }
+//}
+//
+//#template-bmw {
+//  .header-image {
+//	background-image: url(themes/bmw/BMW_1024.jpg);
+//	background-position: center 75%;
+//	background-size: auto auto;
+//
+//	@media (max-width: 480px){
+//	  background-position: center 75%;
+//	  background-size: cover;
+//	  height: 240px;
+//	}
+//
+//	@media (min-width: 480px) and (max-width: 767px){
+//	  background-position: center 75%;
+//	  background-size: cover;
+//	  height: 280px;
+//	}
+//
+//	@media (min-width: 992px){
+//	  height: 380px;
+//	}
+//  }
+//  .sender-text {
+//	display: none;
+//  }
+//}
+//
+//
+//#template-bmw-fs {
+//  .header-image {
+//	background-image: url(themes/bmw-fs/bmw_fs_910x380_plain.jpg);
+//
+//	@media (max-width: 480px){
+//	  background-position: 25% top;
+//	  background-size: auto 260px;
+//	  height: 240px;
+//	}
+//
+//	@media (min-width: 480px) and (max-width: 767px){
+//	  background-position: 25% top;
+//	  background-size: auto 320px;
+//	  height: 280px;
+//	}
+//
+//	@media (min-width: 992px){
+//	  height: 380px;
+//	}
+//  }
+//}
+//
+//#template-mc {
+//  .header-image {
+//	background-image: url(themes/mc/BMW_Motorrad_1024.jpg);
+//
+//	@media (max-width: 480px){
+//	  background-position: center center;
+//	  background-size: cover;
+//	}
+//	@media (min-width: 480px) and (max-width: 767px){
+//	  background-position: center center;
+//	  background-size: cover;
+//	}
+//  }
+//  .sender-text {
+//	display: none;
+//  }
+//}
+//
+//#template-mc-fs {
+//  .header-image {
+//	background-image: url(themes/mc-fs/BMW_Moto.JPG);
+//	height: 420px;
+//	@media (max-width: 480px){
+//	  background-position: center center;
+//	  background-size: cover;
+//	  height: 280px;
+//	}
+//
+//	@media (min-width: 480px) and (max-width: 767px){
+//	  background-position: center center;
+//	  background-size: cover;
+//	  height: 330px;
+//	}
+//	@media (min-width: 992px){
+//	  background-position: center center;
+//	  background-size: 910px;
+//	  height: 520px;
+//	}
+//  }
+//}
+//
+//#template-bmwi {
+//  .header-image {
+//	background-image: url(themes/bmwi/BMWi.JPG);
+//	@media (max-width: 480px){
+//	  background-position: center center;
+//	  background-size: cover;
+//	}
+//
+//	@media (min-width: 480px) and (max-width: 767px){
+//	  background-position: center center;
+//	  background-size: cover;
+//	}
+//  }
+//  .sender-text {
+//	display: none;
+//  }
+//}
+//
+///*---------------------------------------*/
+///* Brand module and sender text */
+//
+//.sender-text {
+//  font-size: 11px;
+//  font-weight: bold;
+//  margin-top: -3px;
+//  color: white;
+//
+//  @media (max-width: 767px){
+//	font-size: 9px;
+//	margin-top: -2px;
+//  }
+//  @media (min-width: 992px){
+//	font-size: 15px;
+//	margin-top: -5px;
+//  }
+//}
+//
+//.brand-module-container {}
+//
+//
+//.brand-module-header {
+//  width: 81px;
+//  position: relative;
+//  text-align: center;
+//  background-color: white;
+//  height: 60px;
+//  margin-bottom: 3px;
+//
+//  @media (max-width: 767px){
+//	width: 72px;
+//	height: 54px;
+//	margin-bottom: 3px;
+//  }
+//  @media (min-width: 992px){
+//	width: 108px;
+//	height: 80px;
+//	margin-bottom: 4px;
+//  }
+//}
+//
+//.logo-wrapper {
+//	width: 45px;
+//	height: 45px;
+//  	display: inline-block;
+//  	margin: 7px ;
+//
+//  @media (max-width: 767px){
+//	width: 40px;
+//	height: 40px;
+//	margin: 6px ;
+//  }
+//  @media (min-width: 992px){
+//	width: 60px;
+//	height: 60px;
+//	margin: 9px ;
+//  }
+//}
+//
+//.brand-module-footer {
+//  width: 81px;
+//  position: relative;
+//  text-align: center;
+//  background-color: white;
+//  height: 27px;
+//  display: table;
+//
+//  @media (max-width: 767px){
+//	width: 72px;
+//	height: 24px;
+//  }
+//  @media (min-width: 992px){
+//	width: 108px;
+//	height: 36px;
+//  }
+//
+//  .brand-slogan {
+//	display: table-cell;
+//	vertical-align: middle;
+//	font-size: 8.5px;
+//	line-height: 10px;
+//	position: relative;
+//	top: -1px;
+//	font-weight: bold;
+//
+//	@media (max-width: 767px){
+//	  font-size: 7.5px;
+//	  line-height: 8.5px;
+//	}
+//	@media (min-width: 992px){
+//	  font-size: 11px;
+//	  line-height: 11px;
+//	}
+//  }
+//
+//}
+//
+//
+//
+//
+//
+//
+//
+//
+///* BMW Footer */
+//.footer-container {
+//	max-width: $pageContentWidth;
+//	margin: 0 auto;
+//	background-color: $bgFooter;
+//	color: white;
+//}
+//
+//
+//
+///*--------------------------------------------*/
+///* TODO: find better solution for this  */
+//
+//
+//.temp-popover {
+//	margin-left: 30px;
+//	background: $lighter-gray;
+//	border-left: 5px solid $orange;
+//	padding: 8px 15px;
+//	border-right: 1px solid $light-gray;
+//	border-bottom: 1px solid $light-gray;
+//}
+//
+///*--------------------------------------------*/
+///* Right to Left Layouts  */
+//
+//body.rtl {
+//
+//	/* --------------------*/
+//	/* Text Sizes */
+//
+//	font-size: 20px;
+//
+//	.question-content-wrapper {
+//		h1 {
+//			font-size: 150%;
+//			line-height: inherit;
+//			font-weight: inherit;
+//		}
+//		p {
+//			font-size: 120%;
+//	  		font-weight: inherit;
+//		}
+//	}
+//
+//	.page-content-body h1,
+//	.page-content-header h1{
+//	  font-size: 150%;
+//	  line-height: inherit;
+//	  font-weight: inherit;
+//	}
+//	.page-content-body p,
+//	.page-content-header p{
+//	  font-size: 120%;
+//	  font-weight: 300;
+//	}
+//
+//	.question-content-body textarea {
+//	  width: 100%;
+//	  font-size: 120%;
+//	  color: inherit;
+//	  font-weight: inherit;
+//	}
+//
+//
+//	/*-----------------------------*/
+//	/* Adjustments for Text Sizes */
+//
+//	.form-control {
+//		font-size: 100%;
+//		padding: 8px 15px;
+//		height: auto;
+//	}
+//
+//	@media screen and (max-width: 991px) {
+//		.question-content-header h1 {
+//			font-size: 100%;
+//		}
+//		.question-content-wrapper .btn {
+//			font-size: inherit;
+//		}
+//		.question-content-body textarea,
+//		.question-content-body input {
+//			font-size: inherit;
+//		}
+//		.page-content-footer .btn {
+//			font-size: inherit;
+//		}
+//	}
+//
+//	@media screen and (min-width: 768px) and (max-width: 991px) {
+//		.rating-label {
+//			font-size: 85%;
+//		}
+//	}
+//
+//	.pull-left {
+//		float: right !important;
+//	}
+//	.pull-right {
+//		float: left !important;
+//	}
+//
+//	.btn-group > .btn,
+//	.btn-group-vertical > .btn,
+//	.choice-item-wrapper {
+//	    float: right;
+//	}
+//	.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+//	    margin-left: 2px;
+//		margin-right: 0;
+//	}
+//	.btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child) {
+//	    margin-left: 0;
+//		margin-right: 2px;
+//	}
+//	.mandatory-tooltip {
+//	    right: auto;
+//	    left: 0;
+//	}
+//
+//	.mandatory .question-content-header > h1::after {
+//	    margin-left: 0;
+//	    margin-right: 0.25em;
+//	}
+//	.list-unstyled {
+//		padding-right: 0;
+//	}
+//
+//	@media screen and (max-width: 767px) {
+//
+//		.choice-item {
+//			text-align: right;
+//		}
+//		.choice-item-wrapper .choice-item {
+//			text-align: center;
+//		}
+//		.choice-item-wrapper {
+//			&:first-child {
+//				padding-left: 1px;
+//				padding-right: 0;
+//			}
+//			&:last-child {
+//				padding-right: 1px;
+//				padding-left: 0;
+//			}
+//		}
+//
+//	}
+//
+//	.sender-mini-fs {
+//		top: 32% !important;
+//		left: 0 !important;
+//	}
+//
+//}
+//
+///* Star Rating */
+//
+//.star-rating {
+//  overflow: hidden;
+//  display: inline-block;
+//  position: relative;
+//}
+//.star-rating input[type="radio"],
+//.star-rating input[type="checkbox"] {
+//  margin: 0;
+//}
+//.star-rating-input {
+//  float: right;
+//  position: absolute;
+//  left: -100px;
+//  opacity: 0;
+//}
+//.star-rating:hover .star-rating-star:hover,
+//.star-rating:hover .star-rating-star:hover ~ .star-rating-star,
+//.star-rating-input:checked ~ .star-rating-star {
+//  color: $starRatingActiveColor;
+//}
+//.star-rating-star,
+//.star-rating:hover .star-rating-star {
+//  position: relative;
+//  float: right;
+//  display: block;
+//  color: $light-gray;
+//  margin-bottom: 0;
+//  font-size: 310%;
+//
+//  /* spaces between stars have to apply via padding, since margins cause an unintended hover effect in the gaps */
+//  padding-left: 4px;
+//  padding-right: 4px;
+//  cursor: pointer;
+//}
+//
+///* matrix question, section */
+//
+//.table.table-matrix > tbody > tr > td {
+//  border-top: none;
+//}
+//
+//.table.table-matrix > thead > tr > th {
+//  border-bottom: none;
+//}
+//
+//.table.table-matrix > tbody > tr > td.vertical-align {
+//  vertical-align: middle;
+//}
+//
+//
+//
+//@media screen and (max-width: 767px) {
+//
+//  .section-matrix .section-content-header .question-content-header {
+//    margin: -10px;
+//  }
+//
+//  .section-matrix {
+//    .btn-group,
+//    .btn-group-container {
+//      width: 100%;
+//    }
+//  }
+//
+//}
+//
+///*-----------------------*/
+///* Animation defaults */
+//
+//
+//
+//.animated.slideInRight,
+//.animated.slideInLeft{
+//    -webkit-animation-duration: 0.4s;
+//    animation-duration: 0.4s;
+//}
+//
+//.animated.slideOutLeft,
+//.animated.slideOutRight {
+//    animation-duration: 0.0s;
+//}

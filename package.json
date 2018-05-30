@@ -1,0 +1,39 @@
+{
+  "name": "surrrrvey",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "lodash": "^4.17.10",
+    "node-sass-chokidar": "0.0.3",
+    "normalize.css": "^7.0.0",
+    "npm-run-all": "^4.1.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.4.0",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-autosize-textarea": "^0.4.9",
+    "react-dom": "^16.4.0",
+    "react-redux": "^5.0.6",
+    "react-scripts": "1.1.4",
+    "redux": "^3.7.2",
+    "redux-form": "^7.3.0",
+    "redux-thunk": "^2.2.0",
+    "redux-undo": "^0.6.1",
+    "sanitize.css": "^5.0.0"
+  },
+  "scripts": {
+    "start-bak": "react-scripts start",
+    "build-bak": "react-scripts build",
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build-css build-js"
+  },
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
+  }
+}
